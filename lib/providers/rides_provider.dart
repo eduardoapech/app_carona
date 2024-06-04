@@ -49,4 +49,10 @@ class RidesProvider with ChangeNotifier {
     }
     return total;
   }
+
+  void resetValues() {
+    _rides.clear();
+    _markedDates.clear();
+    notifyListeners();
+  }
 }

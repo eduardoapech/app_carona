@@ -85,6 +85,11 @@ class CalendarWidget extends StatelessWidget {
               return null;
             },
           ),
+          onFormatChanged: (format) {
+            if (format == CalendarFormat.month) {
+              ridesProvider.resetValues();
+            }
+          },
         ),
         Expanded(
           child: RideList(),
@@ -101,6 +106,8 @@ class CalendarWidget extends StatelessWidget {
     );
   }
 }
+
+
 
 class RideList extends StatelessWidget {
   @override
